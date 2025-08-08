@@ -1,0 +1,139 @@
+:root {
+
+  --green-500: hsl(158, 36%, 37%);
+  --green-700: hsl(158, 42%, 18%);
+
+  --black: hsl(212, 21%, 14%);
+  --grey: hsl(228, 12%, 48%);
+  --cream: hsl(30, 38%, 92%);
+  --white: hsl(0, 0%, 100%);
+
+  --font-primary: 'Montserrat', sans-serif;
+  --font-secondary: 'Fraunces', serif;
+
+  --font-weight-regular: 500;
+  --font-weight-bold: 700;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--cream);
+  font-family: var(--font-primary);
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 1.5rem;
+}
+
+.card {
+    background-color: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    max-width: 600px;
+    display: flex;
+    
+}
+
+
+/* Só aplica altura 100% no layout desktop */
+@media (min-width: 650px) {
+    
+    .card-image {
+        flex: 1;
+    }
+
+    .card-image img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+  }
+}
+
+
+@media (max-width: 650px) {
+  .card-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover; /* corta o excesso mantendo proporção */
+  }
+}
+
+.card-content {
+    flex: 1;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.card-perfume {
+    font-size: 0.75rem;
+    font-weight: var(--font-weight-regular);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+.card-titulo {
+    font-family: var(--font-secondary);
+    font-size: 2rem;
+    color: var(--black);
+    line-height: 1.1;
+}
+
+.card-texto {
+    line-height: 1.5;
+}
+
+.card-precos {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+
+.preco-atual {
+    font-family: var(--font-secondary);
+    font-weight: var(--green-700);
+    font-size: 2rem;
+    color: var(--green-500);
+
+}
+
+.preco-antigo {
+    text-decoration: line-through;
+}
+
+.card-button {
+    border: none;
+    background-color: var(--green-500);
+    border-radius: 8px;
+    padding: 1rem;
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-bold);
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+}
+
+.card-button:hover {
+    background-color: var(--green-700);
+}
+
+/* Só aplica altura 100% no layout desktop */
+@media (max-width: 650px) {
+   .card {
+    flex-direction: column;
+   }
+}
